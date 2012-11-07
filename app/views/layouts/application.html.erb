@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SistemaDeMoteis</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <div id='header'>
+<div id='titulo'>
+  <h1>Sistema de Motéis</h1>
+</div>
+<div id='menu-principal'>
+  <ul>
+    <li><%= link_to 'Início', root_path %></li>
+    <li><%= link_to 'Motéis', moteis_path %></li>
+  </ul>
+</div>
+ </div>
+
+<%= yield %>
+
+</body>
+</html>

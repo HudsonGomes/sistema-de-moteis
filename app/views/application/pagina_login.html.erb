@@ -1,0 +1,22 @@
+<div>
+  <h1>APLICATIVO DE MOTÉIS</h1>
+ <hr/>
+<br/>
+<div>
+ <%= form_tag pagina_inicial_path do %>
+ <div>
+   <%= label_tag :email, 'email' %>
+   <%= text_field_tag 'email' %>
+ </div>
+<br/>
+ <div>
+   <%= label_tag :senha, 'senha' %>
+   <%= password_field_tag 'senha' %>
+ </div>
+<br/>
+<div>
+<%= submit_tag 'Entrar' %>
+</div>
+ <% end %>
+</div>
+</div>

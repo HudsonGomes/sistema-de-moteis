@@ -1,0 +1,13 @@
+<h2>INDEX MOTÉIS</h2>
+<hr/>
+<% if @moteis.any? %>
+ <% @moteis.each do |motel| %>
+   <%= motel.nome %>
+   <%= link_to 'ver', motel_path %>
+ <% end %>
+<% else %>
+ <p>Nao existem moteis cadastrados</p>
+<% end %>
+<%= link_to 'criar motel', new_motel_path %>
+
+

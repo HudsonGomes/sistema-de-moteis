@@ -1,0 +1,29 @@
+<h2>CRIAR MOTEL</h2>
+<hr/>
+<%= form_for(@motel) do |f| %>
+ <% if @motel.errors.any? %>
+ <div id='errorExplanation'>
+  <h3><%= pluralize(@motel.errors.count, 'error') %> Motel não salvo: </h3>
+  <ul>
+  <% @motel.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+ </div>
+<% end %>
+
+ <div class='field'>
+   <%= f.label :nome %>
+   <%= f.text_field :nome %>
+ </div>
+ <div class='field'>
+   <%= f.label :latitude %>
+   <%= f.text_field :latitude %>
+ </div>
+ <div class='action'>
+   <%= f.submit 'Criar Motel' %>
+ </div>
+<% end %>
+
+
+
