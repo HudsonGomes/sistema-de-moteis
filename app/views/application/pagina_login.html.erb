@@ -1,8 +1,16 @@
 <div>
   <h2>Aplicativo de Motéis</h2>
   <hr/>
-  <br/>
-  <div>
-    <%= link_to 'Entrar', moteis_path, :class => 'btn btn-inverse' %>
-  </div>
+  <%=  form_tag login_path do %>
+    <div>
+      <label>Login:</label>
+      <%= text_field_tag :login, params[:login] %>
+      <label>Senha:</label>
+      <%= password_field_tag :senha %>
+    </div>
+  <hr/>
+    <div>
+      <%= submit_tag 'Entrar', :class => 'btn btn-inverse' %>
+    </div>
+  <% end %>
 </div>

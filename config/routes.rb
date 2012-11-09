@@ -4,6 +4,9 @@ SistemaDeMoteis::Application.routes.draw do
 
   root :to => 'application#pagina_login'
 
+  post 'login' => 'sessions#login', :as => 'login'
+  get 'logout' => 'sessions#logout', :as => 'logout'
+  
   resources :moteis
   resources :suites
 

@@ -19,9 +19,28 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails', '2.0.6'
 gem 'jquery-datatables-rails'
+
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'ruby-debug19'
+  gem 'awesome_print'
+  gem 'pry'
+  gem 'launchy', '2.1.0'
+end
+
+group :test do
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails', '1.7.0'
+  gem 'capybara'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,8 +57,4 @@ gem 'jquery-datatables-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
-end
-
-group :development, :test do
-  gem 'pry'
 end
