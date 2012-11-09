@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106232429) do
+ActiveRecord::Schema.define(:version => 20121107205028) do
 
   create_table "moteis", :force => true do |t|
-    t.string   "nome",          :limit => 100, :null => false
-    t.string   "endereco",      :limit => 100, :null => false
-    t.string   "endnumero",     :limit => 6
-    t.string   "endcomplemeto", :limit => 100
-    t.string   "cidade",        :limit => 100, :null => false
-    t.string   "uf",                           :null => false
-    t.string   "telefone1",     :limit => 20
-    t.string   "telefone2",     :limit => 20
-    t.float    "latitude",                     :null => false
-    t.float    "longitude",                    :null => false
+    t.string   "nome",           :limit => 100, :null => false
+    t.string   "endereco",       :limit => 100, :null => false
+    t.string   "endnumero",      :limit => 6
+    t.string   "endcomplemento", :limit => 100
+    t.string   "cidade",         :limit => 100, :null => false
+    t.string   "uf",                            :null => false
+    t.string   "telefone1",      :limit => 20
+    t.string   "telefone2",      :limit => 20
+    t.float    "latitude",                      :null => false
+    t.float    "longitude",                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

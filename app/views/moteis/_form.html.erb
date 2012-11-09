@@ -1,0 +1,49 @@
+<%= form_for(@motel) do |f| %>
+  <% if @motel.errors.any? %>
+    <div id="error_explanation">
+      <h2>Não foi possível cadastrar motel</h2>
+      <hr/>
+      <ul>
+        <% @motel.errors.messages.values.each do |msg| %>
+          <li><%= msg[0] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+  <div>
+    <%= f.label :endereco, 'endereço' %>
+    <%= f.text_field :endereco %>
+  </div>
+  <div>
+    <%= f.label :endnumero, 'número' %>
+    <%= f.text_field :endnumero %>
+  </div>
+  <div>
+    <%= f.label :endcomplemento, 'complemento' %>
+    <%= f.text_field :endcomplemento %>
+  </div>
+  <div>
+    <%= f.label :telefone1, 'telefone' %>
+    <%= f.text_field :telefone1 %>
+  </div>
+  <div>
+    <%= f.label :telefone2, 'telefone' %>
+    <%= f.text_field :telefone2 %>
+  </div>
+  <div>
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+  <div>
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+  <div>
+    <%= f.submit 'Cadatrar', :class => 'btn btn-inverse' %>
+  </div>
+<% end %>

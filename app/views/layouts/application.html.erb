@@ -1,25 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>SistemaDeMoteis</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
- <div id='header'>
-<div id='titulo'>
-  <h1>Sistema de Motéis</h1>
-</div>
-<div id='menu-principal'>
-  <ul>
-    <li><%= link_to 'Início', root_path %></li>
-    <li><%= link_to 'Motéis', moteis_path %></li>
-  </ul>
-</div>
- </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= content_for?(:title) ? yield(:title) : "Sistema de Motéis" %></title>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+
+  </head>
+  <body class="main">
+
+    <div class="navbar navbar-top">
+      <div class="navbar-inner" id="barra_do_sistema" >
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Sistemas de Motéis</a>
+
+          <div class="container nav-collapse">
+            <ul class="nav" id="menu-principal">
+              <li><%= link_to "Início", root_path %></li>
+              <li><%= link_to "Motéis", moteis_path%></li>
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content" style="min-height: 500px;">
+        <%= yield %>
+      </div>
+    </div>
+    <!--/content-->
+    <hr/>
+  <footer>
+
+  </footer>
+  <!-- /container -->
 
 </body>
 </html>
+

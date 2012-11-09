@@ -2,7 +2,7 @@ SistemaDeMoteis::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  root :to => 'application#pagina_inicial' 
+  root :to => 'application#pagina_login'
 
   resources :moteis
   resources :suites

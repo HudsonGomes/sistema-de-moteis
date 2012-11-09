@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="span12">
+    <div class="span2">
+      <b>Endereço:</b>
+      <%= @motel.endereco %>
+    </div>
+
+    <div class="span2">
+      <b>Número:</b>
+      <%= @motel.endnumero %>
+    </div>
+
+    <div class="span2">
+      <b>Complemento:</b>
+      <%= tem_complemento?(@motel) %>
+    </div>
+
+    <div class="span2">
+      <b>Telefone 1:</b>
+      <%= @motel.telefone1 %>
+    </div>
+
+    <div class="span2">
+      <b>Telefone 2:</b>
+      <%= @motel.telefone2 %>
+    </div>
+
+    <div class="span2">
+      <b>Latitude:</b>
+      <%= @motel.latitude %>
+    </div>
+
+    <div class="span2">
+      <b>Longitude:</b>
+      <%= @motel.longitude %>
+    </div>
+
+    <%= link_to 'Editar', edit_motel_path(@motel) %> |
+    <%= link_to 'Excluir', motel_path, :confirm => 'Você tem certeza que quer deletar esse motel?', :method => :delete %> |
+    <%= link_to 'Voltar', moteis_path %>
+  </div>
+</div>

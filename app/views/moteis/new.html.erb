@@ -1,29 +1,74 @@
-<h2>CRIAR MOTEL</h2>
+<h2>Cadastro de motéis</h2>
 <hr/>
 <%= form_for(@motel) do |f| %>
- <% if @motel.errors.any? %>
- <div id='errorExplanation'>
-  <h3><%= pluralize(@motel.errors.count, 'error') %> Motel não salvo: </h3>
-  <ul>
-  <% @motel.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+  <% if @motel.errors.any? %>
+    <div id="error_explanation">
+      <h2>Não foi possível cadastrar motel</h2>
+      <hr/>
+      <ul>
+        <% @motel.errors.messages.values.each do |msg| %>
+          <li><%= msg[0] %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
-  </ul>
- </div>
+
+  <div class="span3">
+    <%= f.label :nome, 'Nome:' %>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="span3">
+        <%= f.label :endereco, 'Endereço:' %>
+        <%= f.text_field :endereco %>
+      </div>
+      <div class="span3">
+        <%= f.label :endnumero, 'Número:' %>
+        <%= f.text_field :endnumero %>
+      </div>
+      <div class="span3">
+        <%= f.label :endcomplemento, 'Complemento:' %>
+        <%= f.text_field :endcomplemento %>
+      </div>
+      <div class="span3">
+        <%= f.label :cidade, 'Cidade:' %>
+        <%= f.text_field :cidade %>
+      </div>
+      <div class="span3">
+        <%= f.label :uf, 'UF:' %>
+        <%= f.text_field :uf %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="span3">
+        <%= f.label :telefone1, 'Telefone 1:' %>
+        <%= f.text_field :telefone1 %>
+      </div>
+      <div class="span3">
+        <%= f.label :telefone2, 'Telefone 2:' %>
+        <%= f.text_field :telefone2 %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="span3">
+        <%= f.label :latitude, 'Latitude:' %>
+        <%= f.text_field :latitude %>
+      </div>
+      <div class="span3">
+        <%= f.label :longitude, 'Longitude:' %>
+        <%= f.text_field :longitude %>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div>
+    <%= f.submit 'Cadatrar', :class => 'btn btn-inverse btn-large' %>
+    <%= link_to 'Voltar', moteis_path, :class => 'btn btn-inverse btn-large' %>
+  </div>
 <% end %>
-
- <div class='field'>
-   <%= f.label :nome %>
-   <%= f.text_field :nome %>
- </div>
- <div class='field'>
-   <%= f.label :latitude %>
-   <%= f.text_field :latitude %>
- </div>
- <div class='action'>
-   <%= f.submit 'Criar Motel' %>
- </div>
-<% end %>
-
-
 

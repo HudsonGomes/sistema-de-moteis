@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @suite.nome %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @suite.descricao %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%= @suite.valor %>
+</p>
+
+
+<%= link_to 'Edit', edit_suite_path(@suite) %> |
+<%= link_to 'Back', suites_path %>
