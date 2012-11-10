@@ -1,16 +1,62 @@
-<div>
-  <h2>Aplicativo de Motéis</h2>
-  <hr/>
-  <%=  form_tag login_path do %>
-    <div>
-      <label>Login:</label>
-      <%= text_field_tag :login, params[:login] %>
-      <label>Senha:</label>
-      <%= password_field_tag :senha %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= content_for?(:title) ? yield(:title) : "Sistema de Motéis" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+
+  </head>
+  <body class="main">
+
+    <div class="navbar navbar-top">
+      <div class="navbar-inner" id="barra_do_sistema" >
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Sistemas de Motéis</a>
+        </div>
+      </div>
     </div>
-  <hr/>
-    <div>
-      <%= submit_tag 'Entrar', :class => 'btn btn-inverse' %>
+
+    <div class="container">
+      <div class="content" style="min-height: 500px;">
+        <div>
+          <h2>Aplicativo de Motéis</h2>
+          <hr/>
+          <%=  form_tag login_path do %>
+            <div>
+              <label>Login:</label>
+              <%= text_field_tag :login, params[:login] %>
+              <label>Senha:</label>
+              <%= password_field_tag :senha %>
+            </div>
+            <hr/>
+            <div>
+              <%= submit_tag 'Entrar', :class => 'btn btn-inverse' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-</div>
+    <!--/content-->
+    <hr/>
+  <footer>
+
+  </footer>
+  <!-- /container -->
+
+</body>
+</html>

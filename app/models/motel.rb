@@ -7,7 +7,7 @@ class Motel < ActiveRecord::Base
   validates :latitude, :presence => { :message => 'A latitude deve ser preenchida' }
   validates :longitude, :presence => { :message => 'A longitude deve ser preenchida' }
   validates :telefone1, :numericality => { :message => 'O telefone 1 deve conter somente numeros' }
-  validates :telefone2, :numericality => { :message => 'O telefone 2 deve conter somente numeros' }
+  validates :telefone1, :presence => { :message => 'O telfone 1 deve ser preenchido' }
 
 
 end

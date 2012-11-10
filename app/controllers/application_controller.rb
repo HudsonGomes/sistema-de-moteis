@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def pagina_login
-
+    render :layout => false
   end	
 
 end

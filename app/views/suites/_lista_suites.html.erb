@@ -1,0 +1,21 @@
+<% if @suites.any? %>
+  <div class="well">
+    <table class="table table-striped table-bordered datatable">
+      <tr>
+        <th>Nome</th>
+      </tr>
+
+      <% @suites.each do |suite| %>
+        <tr>
+          <td><%= link_to suite.nome, suite_path(suite) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+<% else %>
+  <div>
+    <p>Não existem suítes cadastradas para esse motel</p>
+  </div>
+<% end %>
+
+<%= link_to 'Cadastrar Suíte', new_suite_path, :class => 'btn btn-inverse' %>

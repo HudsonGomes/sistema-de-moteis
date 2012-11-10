@@ -1,13 +1,5 @@
 class SuitesController < ApplicationController
 
-  def index
-    @suites = Suite.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
-  end
-
   def show
     @suite = Suite.find(params[:id])
   end

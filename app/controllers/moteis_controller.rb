@@ -1,11 +1,23 @@
 class MoteisController < ApplicationController
 
+  skip_before_filter :logado?, :only => :index_xml
+
   def index
     @moteis = Motel.all
   end
 
+  def index_xml
+    @moteis = Motel.all
+
+    respond_to do |format|
+      format.xml { render 'index.xml' }
+    end
+  end
+
   def show
     @motel = Motel.find(params[:id])
+
+    @suites = Suite.find_all_by_motel_id(params[:id])
   end
 
   def new

@@ -7,11 +7,19 @@
     <table class="table table-striped table-bordered datatable">
       <tr>
         <th>Nome</th>
+        <th>telefone principal</th>
+        <th>telefone secundário</th>
+        <th>Cidade</th>
+        <th>UF</th>
       </tr>
 
       <% @moteis.each do |motel| %>
         <tr>
           <td><%= link_to motel.nome, motel_path(motel) %></td>
+          <td><%= motel.telefone1%></td>
+          <td><%= verifica_telefone_secundario(motel)%></td>
+          <td><%= motel.cidade %></td>
+          <td><%= motel.uf %></td>
         </tr>
       <% end %>
     </table>
@@ -20,4 +28,5 @@
 
 <hr />
 
-<%= link_to 'Cadastrar Motel', new_motel_path, :class => 'btn btn-inverse btn-large' %>
+<%= link_to 'Cadastrar Motel', new_motel_path, :class => 'btn btn-inverse' %>
+<%= link_to 'Gerar XML', url_for(:controller => 'moteis', :action => 'index_xml', :format => 'xml'), :class => 'btn btn-inverse' %>

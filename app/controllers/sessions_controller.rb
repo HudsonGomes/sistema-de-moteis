@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to moteis_path
     else
       flash.now.alert = "Iduff ou senha invalidos"
-      render 'pagina_login.html'
+      render 'pagina_login.html', :layout => false
     end
   end
 

@@ -1,0 +1,19 @@
+<table class="table table-striped table-bordered datatable">
+  <tr>
+    <th>Nome</th>
+    <th>telefone principal</th>
+    <th>telefone secundário</th>
+    <th>Cidade</th>
+    <th>UF</th>
+  </tr>
+
+  <% @moteis.each do |motel| %>
+    <tr>
+      <td><%= motel.nome%></td>
+      <td><%= motel.telefone1%></td>
+      <td><%= verifica_telefone_secundario(motel)%></td>
+      <td><%= motel.cidade %></td>
+      <td><%= motel.uf %></td>
+    </tr>
+  <% end %>
+</table>
