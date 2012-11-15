@@ -28,10 +28,8 @@ production:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: moteis_production
+  database: HEROKU_POSTGRESQL_TEAL_URL
   pool: 5
-  username: root
-  password: gdaha6622
 
 
 cucumber:
