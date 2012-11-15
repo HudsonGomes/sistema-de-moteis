@@ -8,6 +8,8 @@ SistemaDeMoteis::Application.routes.draw do
   get 'logout' => 'sessions#logout', :as => 'logout'
   
   match 'listagem_moteis' => 'moteis#listagem_xml'
+  match 'ativar' => 'moteis#ativar'
+  match 'desativar' => 'moteis#desativar'
 
   resources :moteis
   resources :suites

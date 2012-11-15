@@ -45,19 +45,26 @@ class MoteisController < ApplicationController
 
     respond_to do |format|
       if @motel.update_attributes(params[:motel])
-        format.html { redirect_to @motel, :notice => 'Motel was successfully updated.' }
+        format.html { redirect_to @motel, :notice => 'Motel foi atualizado com sucesso.' }
       else
         format.html { render :action => "edit" }
       end
     end
   end
 
-  def destroy
+  def desativar
     @motel = Motel.find(params[:id])
-    @motel.destroy
+    @motel.ativo = false
+    @motel.save
 
-    respond_to do |format|
-      format.html { redirect_to moteis_url }
-    end
+    redirect_to moteis_url
+  end
+
+  def ativar
+    @motel = Motel.find(params[:id])
+    @motel.ativo = true
+    @motel.save
+
+    redirect_to moteis_url
   end
 end
