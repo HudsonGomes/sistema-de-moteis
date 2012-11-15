@@ -3,11 +3,14 @@ class Administrador < ActiveRecord::Base
 
   before_save :encrypt_senha
 
-  validates :nome, :presence => true
-  validates :cpf, :presence => true
-  validates :login, :presence => true
-  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }, :presence => true
-  validates :senha, :presence => true, :on => :create
+  validates :nome, :presence => { :message => 'O nome deve ser preenchido' }
+  validates :cpf, :presence => { :message => 'O cpf deve ser preenchido' }
+  validates :cpf, :numericality => { :message => 'O cpf deve conter somente numeros' }
+  validates :cpf, :length => { :is => 11 }
+  validates :login, :presence => { :message => 'O login deve ser preenchido' }
+  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }, 
+    :presence => { :message => 'O email deve ser preenchido' }
+  validates :senha, :presence => { :message => 'A senha deve ser preenchido' }, :on => :create
 
   def encrypt_senha
     if senha.present?

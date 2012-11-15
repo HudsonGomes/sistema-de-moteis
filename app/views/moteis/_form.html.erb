@@ -11,39 +11,61 @@
     </div>
   <% end %>
 
-  <div>
-    <%= f.label :nome %>
+  <div class="span3">
+    <%= f.label :nome, 'Nome:' %>
     <%= f.text_field :nome %>
   </div>
-  <div>
-    <%= f.label :endereco, 'endereço' %>
-    <%= f.text_field :endereco %>
+  <div class="row">
+    <div class="span12">
+      <div class="span3">
+        <%= f.label :endereco, 'Endereço:' %>
+        <%= f.text_field :endereco %>
+      </div>
+      <div class="span3">
+        <%= f.label :endnumero, 'Número:' %>
+        <%= f.text_field :endnumero %>
+      </div>
+      <div class="span3">
+        <%= f.label :endcomplemento, 'Complemento:' %>
+        <%= f.text_field :endcomplemento %>
+      </div>
+      <div class="span3">
+        <%= f.label :cidade, 'Cidade:' %>
+        <%= f.text_field :cidade %>
+      </div>
+      <div class="span3">
+        <%= f.label :uf, 'UF:' %>
+        <%= f.text_field :uf %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label :endnumero, 'número' %>
-    <%= f.text_field :endnumero %>
+  <div class="row">
+    <div class="span12">
+      <div class="span3">
+        <%= f.label :telefone1, 'Telefone 1:' %>
+        <%= f.text_field :telefone1 %>
+      </div>
+      <div class="span3">
+        <%= f.label :telefone2, 'Telefone 2:' %>
+        <%= f.text_field :telefone2 %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= f.label :endcomplemento, 'complemento' %>
-    <%= f.text_field :endcomplemento %>
+  <div class="row">
+    <div class="span12">
+      <div class="span3">
+        <%= f.label :latitude, 'Latitude:' %>
+        <%= f.text_field :latitude %>
+      </div>
+      <div class="span3">
+        <%= f.label :longitude, 'Longitude:' %>
+        <%= f.text_field :longitude %>
+      </div>
+    </div>
   </div>
+  <hr/>
   <div>
-    <%= f.label :telefone1, 'telefone' %>
-    <%= f.text_field :telefone1 %>
-  </div>
-  <div>
-    <%= f.label :telefone2, 'telefone' %>
-    <%= f.text_field :telefone2 %>
-  </div>
-  <div>
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
-  </div>
-  <div>
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
-  </div>
-  <div>
-    <%= f.submit 'Cadatrar', :class => 'btn btn-inverse' %>
+    <%= f.submit 'Cadatrar', :class => 'btn btn-inverse btn-large' %>
+    <%= link_to 'Voltar', moteis_path, :class => 'btn btn-inverse btn-large' %>
   </div>
 <% end %>

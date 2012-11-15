@@ -1,6 +1,16 @@
-<h1>Editing suite</h1>
+<h1>Editar Suite</h1>
+<hr/>
+<%= form_for(@suite) do |f| %>
+  <% if @suite.errors.any? %>
+    <div id="error_explanation">
+      <h2>Não foi possível cadastrar suite</h2>
+      <hr/>
+      <ul>
+        <% @suite.errors.messages.values.each do |msg| %>
+          <li><%= msg[0] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @suite %> |
-<%= link_to 'Back', suites_path %>
+<% end %>

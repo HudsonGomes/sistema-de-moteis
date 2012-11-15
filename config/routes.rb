@@ -7,7 +7,7 @@ SistemaDeMoteis::Application.routes.draw do
   post 'login' => 'sessions#login', :as => 'login'
   get 'logout' => 'sessions#logout', :as => 'logout'
   
-  match 'listagem_moteis' => 'moteis#index_xml'
+  match 'listagem_moteis' => 'moteis#listagem_xml'
 
   resources :moteis
   resources :suites

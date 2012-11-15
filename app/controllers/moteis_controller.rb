@@ -1,16 +1,16 @@
 class MoteisController < ApplicationController
 
-  skip_before_filter :logado?, :only => :index_xml
+  skip_before_filter :logado?, :only => :listagem_xml
 
   def index
     @moteis = Motel.all
   end
 
-  def index_xml
+  def listagem_xml
     @moteis = Motel.all
 
     respond_to do |format|
-      format.xml { render 'index.xml' }
+      format.xml { render :xml => @moteis }
     end
   end
 
