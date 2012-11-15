@@ -28,8 +28,10 @@ production:
   adapter: postgresql
   encoding: utf8
   reconnect: false
-  database: HEROKU_POSTGRESQL_TEAL_URL
+  database: dagsqv8kb10hsk
   pool: 5
+  username: hbbinvsxqjksyy
+  password: Pxvj-BKQEKH2r_jkQ61PpNRjpy
 
 
 cucumber:
