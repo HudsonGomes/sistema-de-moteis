@@ -1,43 +1,28 @@
-<div class="row">
-  <div class="span12">
-    <div class="span2">
-      <b>Endereço:</b>
-      <%= @motel.endereco %>
-    </div>
+<table class="table-bordered table">
+  <thead>
+  <th>Endereço</th>
+  <th>Número</th>
+  <th>Complemento</th>
+  <th>Telefone Principal</th>
+  <th>Telefone Secundário</th>
+  <th>Ações</th>
+</thead>
+<tbody>
 
-    <div class="span2">
-      <b>Número:</b>
-      <%= @motel.endnumero %>
-    </div>
-
-    <div class="span2">
-      <b>Complemento:</b>
-      <%= tem_complemento?(@motel) %>
-    </div>
-
-    <div class="span2">
-      <b>Telefone 1:</b>
-      <%= @motel.telefone1 %>
-    </div>
-
-    <div class="span2">
-      <b>Telefone 2:</b>
-      <%= @motel.telefone2 %>
-    </div>
-
-    <div class="span2">
-      <b>Latitude:</b>
-      <%= @motel.latitude %>
-    </div>
-
-    <div class="span2">
-      <b>Longitude:</b>
-      <%= @motel.longitude %>
-    </div>
-
+</tbody>
+<tr>
+  <td><%= @motel.endereco %></td>
+  <td><%= @motel.endnumero %></td>
+  <td><%= tem_complemento?(@motel) %></td>
+  <td><%= @motel.telefone1 %></td>
+  <td><%= @motel.telefone2 %></td>
+  <td>
     <%= link_to 'Editar', edit_motel_path(@motel) %> |
-    <%= link_to 'Ativar', desativar_path %> |
-    <%= link_to 'Desativar', ativar_path %> |
-    <%= link_to 'Voltar', moteis_path %>
-  </div>
-</div>
+    <% if @motel.ativo == 1 %>
+      <%= link_to 'Desativar', desativar_path(@motel.id) %>
+    <% else %>
+      <%= link_to 'Ativar', ativar_path(@motel.id) %>
+    <% end %>
+  </td>
+</tr>
+</table>

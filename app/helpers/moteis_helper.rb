@@ -8,4 +8,12 @@ module MoteisHelper
     end
   
   end
+
+  def verifica_status(motel)
+    if motel.ativo == 1
+      "Ativo"
+    else
+      "Inativo"
+    end
+  end
 end

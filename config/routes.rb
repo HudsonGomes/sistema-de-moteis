@@ -2,17 +2,21 @@ SistemaDeMoteis::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  root :to => 'application#pagina_login'
+  root :to => 'moteis#index'
 
   post 'login' => 'sessions#login', :as => 'login'
   get 'logout' => 'sessions#logout', :as => 'logout'
-  
+
+
+  match 'pagina_login' => 'application#pagina_login'
   match 'listagem_moteis' => 'moteis#listagem_xml'
-  match 'ativar' => 'moteis#ativar'
-  match 'desativar' => 'moteis#desativar'
+  match 'ativar/:id' => 'moteis#ativar', :as => 'ativar'
+  match 'desativar/:id' => 'moteis#desativar', :as => 'desativar'
+  match 'alterar_senha' => 'administradores#alterar_senha'
 
   resources :moteis
   resources :suites
+  resources :administradores, :only => :update
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

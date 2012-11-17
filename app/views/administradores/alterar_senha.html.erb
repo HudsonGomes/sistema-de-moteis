@@ -1,0 +1,16 @@
+<h2>Alterar Senha</h2>
+<hr/>
+<div>
+  <%= form_for @administrador_corrente do |f| %>
+    <div>
+      <%= f.label :password, 'Nova Senha:' %>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.label :password_confirmation, 'Confirme sua senha:' %>
+      <%= f.password_field :password_confirmation, :disabled => 'disabled' %>
+    </div>
+    <hr/>
+    <%= f.submit 'Atualizar', :class => 'btn btn-inverse', :id => 'btn-alterar-senha', :disabled => 'disabled' %>
+  <% end %>
+</div>

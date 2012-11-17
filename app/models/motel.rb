@@ -12,5 +12,12 @@ class Motel < ActiveRecord::Base
   validates :telefone1, :presence => { :message => 'O telefone deve ser preenchido' }
   validates :ativo, :presence => true
 
+  scope :ativos, lambda {
+    where('ativo = 1')
+  }
+
+  scope :inativos, lambda {
+    where('ativo = 0')
+  }
 
 end

@@ -3,11 +3,13 @@ class MoteisController < ApplicationController
   skip_before_filter :logado?, :only => :listagem_xml
 
   def index
-    @moteis = Motel.all
+    @moteis_ativos = Motel.ativos
+
+    @moteis_inativos = Motel.inativos
   end
 
   def listagem_xml
-    @moteis = Motel.all
+    @moteis = Motel.ativos
 
     respond_to do |format|
       format.xml { render :xml => @moteis }
@@ -30,6 +32,7 @@ class MoteisController < ApplicationController
 
   def create
     @motel = Motel.new(params[:motel])
+    @motel.ativo = 1
 
     respond_to do |format|
       if @motel.save
@@ -54,7 +57,7 @@ class MoteisController < ApplicationController
 
   def desativar
     @motel = Motel.find(params[:id])
-    @motel.ativo = false
+    @motel.ativo = 0
     @motel.save
 
     redirect_to moteis_url
@@ -62,7 +65,7 @@ class MoteisController < ApplicationController
 
   def ativar
     @motel = Motel.find(params[:id])
-    @motel.ativo = true
+    @motel.ativo = 1
     @motel.save
 
     redirect_to moteis_url

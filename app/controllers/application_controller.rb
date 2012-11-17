@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def logado?
     if not session[:administrador_id]
-      redirect_to(root_path, :alert => "Usuario invalido")
+      redirect_to(pagina_login_path, :alert => "Usuario invalido")
     else
       usuario_corrente
     end

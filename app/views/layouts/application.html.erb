@@ -30,7 +30,15 @@
           <div class="container nav-collapse">
             <ul class="nav" id="menu-principal">
               <li><%= link_to "Início", moteis_path %></li>
-              <li><%= link_to "Minha Conta"%></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  Minha Conta
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                  <li><%= link_to "Alterar senha", alterar_senha_path %></li>
+                </ul>
+              </li>
               <li><%= link_to "Logout", logout_path%></li>
             </ul>
           </div>
