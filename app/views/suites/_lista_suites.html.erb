@@ -1,6 +1,6 @@
-<% if @suites.any? %>
-  <div class="well">
-    <table class="table table-striped table-bordered">
+<div class="well">
+  <% if @suites.any? %>
+    <table class="table table-striped table-bordered datatable table-condensed">
       <tr>
         <th>Nome</th>
         <th>Descrição</th>
@@ -15,11 +15,11 @@
         </tr>
       <% end %>
     </table>
-  </div>
-<% else %>
-  <div>
-    <p>Não existem suítes cadastradas para esse motel</p>
-  </div>
-<% end %>
-
+  <% else %>
+    <div>
+      <h4>Não existem suítes cadastradas para esse motel</h4>
+    </div>
+  <% end %>
+</div>
+<br/>
 <%= link_to 'Cadastrar Suíte', new_suite_path, :class => 'btn btn-inverse' %>
