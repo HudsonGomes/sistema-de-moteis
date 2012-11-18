@@ -1,16 +1,11 @@
 <%= form_for(@motel) do |f| %>
   <% if @motel.errors.any? %>
-    <div id="error_explanation">
-      <h2>Não foi possível cadastrar motel</h2>
-      <hr/>
-      <ul>
-        <% @motel.errors.messages.values.each do |msg| %>
-          <li><%= msg[0] %></li>
-        <% end %>
-      </ul>
+    <div id="campo-erros">
+      <h3>Erro na operação:</h3>
+        <p><b><%= @motel.errors.messages.values.first[0] %></b></p>
     </div>
   <% end %>
-
+  <br/>
   <div class="row">
     <div class="span12">
       <div class="span3">
@@ -76,6 +71,5 @@
   <hr/>
   <div>
     <%= f.submit 'Salvar', :class => 'btn btn-inverse btn-large' %>
-    <%= link_to 'Voltar', moteis_path, :class => 'btn btn-inverse btn-large' %>
   </div>
 <% end %>

@@ -7,10 +7,6 @@
  *= require_tree . 
 */
 
-.field_with_errors {
-    background-color: #E9967A;
-}
-
 #menu-principal {
     position: relative;
     left: 30px;
@@ -60,4 +56,11 @@ body {
 .main {
     margin: 10px 50px;
     background-color: #CCCCCC;
+}
+
+#campo-erros{
+    border: 2px solid;
+    border-color: #FF0000;
+    padding: 7px 7px 0px;
+    background-color: #FF6666;
 }
