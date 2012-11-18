@@ -12,7 +12,8 @@ class MoteisController < ApplicationController
     @moteis = Motel.ativos
 
     respond_to do |format|
-      format.xml { render :xml => @moteis }
+      format.xml { render :xml => @moteis, :only => [:nome, :cep, :endereco,
+          :endnumero, :telefone1, :cidade, :uf] }
     end
   end
 

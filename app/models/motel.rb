@@ -11,6 +11,7 @@ class Motel < ActiveRecord::Base
   validates :telefone1, :numericality => { :message => 'O telefone deve conter somente numeros' }
   validates :telefone1, :presence => { :message => 'O telefone deve ser preenchido' }
   validates :ativo, :presence => true
+  validates :cep, :presence => { :message => 'O cep deve ser preenchido' }
 
   scope :ativos, lambda {
     where('ativo = 1')

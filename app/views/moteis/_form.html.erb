@@ -11,61 +11,71 @@
     </div>
   <% end %>
 
-  <div class="span3">
-    <%= f.label :nome, 'Nome:' %>
-    <%= f.text_field :nome %>
-  </div>
   <div class="row">
     <div class="span12">
       <div class="span3">
-        <%= f.label :endereco, 'Endereço:' %>
-        <%= f.text_field :endereco %>
-      </div>
-      <div class="span3">
-        <%= f.label :endnumero, 'Número:' %>
-        <%= f.text_field :endnumero %>
-      </div>
-      <div class="span3">
-        <%= f.label :endcomplemento, 'Complemento:' %>
-        <%= f.text_field :endcomplemento %>
-      </div>
-      <div class="span3">
-        <%= f.label :cidade, 'Cidade:' %>
-        <%= f.text_field :cidade %>
-      </div>
-      <div class="span3">
-        <%= f.label :uf, 'UF:' %>
-        <%= f.text_field :uf %>
+        <%= f.label :nome, 'Nome:' %>
+        <%= f.text_field :nome, :style => 'border: 1px solid' %>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="span12">
-      <div class="span3">
+      <div class="span2">
         <%= f.label :telefone1, 'Telefone 1:' %>
-        <%= f.text_field :telefone1 %>
+        <%= f.text_field :telefone1, :class => 'span2', :style => 'border: 1px solid' %>
       </div>
-      <div class="span3">
+      <div class="span2">
         <%= f.label :telefone2, 'Telefone 2:' %>
-        <%= f.text_field :telefone2 %>
+        <%= f.text_field :telefone2, :class => 'span2', :style => 'border: 1px solid' %>
       </div>
     </div>
   </div>
+  <hr/>
   <div class="row">
     <div class="span12">
-      <div class="span3">
+      <div class="span2">
+        <%= f.label :endereco, 'Endereço:' %>
+        <%= f.text_field :endereco, :class => 'span2', :style => 'border: 1px solid' %>
+      </div>
+      <div class="span2">
+        <%= f.label :endnumero, 'Número:' %>
+        <%= f.text_field :endnumero, :class => 'span2', :style => 'border: 1px solid' %>
+      </div>
+      <div class="span2">
+        <%= f.label :endcomplemento, 'Complemento:' %>
+        <%= f.text_field :endcomplemento, :class => 'span2', :style => 'border: 1px solid' %>
+      </div>
+      <div class="span4">
+        <%= f.label :cep, 'Cep:' %>
+        <%= f.text_field :cep, :class => 'span2', :style => 'border: 1px solid' %>
+      </div>
+      <div class="span2">
+        <%= f.label :cidade, 'Cidade:' %>
+        <%= f.select :cidade, ['Rio de Janeiro', 'Niterói'], {}, :class => 'span2', :style => 'border: 1px solid' %>
+      </div>
+      <div class="span2">
+        <%= f.label :uf, 'UF:' %>
+        <%= f.select :uf, ['RJ'], {}, :class => 'span1', :style => 'border: 1px solid' %>
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="span12">
+      <div class="span1">
         <%= f.label :latitude, 'Latitude:' %>
-        <%= f.text_field :latitude %>
+        <%= f.text_field :latitude, :class => 'span1', :style => 'border: 1px solid' %>
       </div>
       <div class="span3">
         <%= f.label :longitude, 'Longitude:' %>
-        <%= f.text_field :longitude %>
+        <%= f.text_field :longitude, :class => 'span1', :style => 'border: 1px solid' %>
       </div>
     </div>
   </div>
   <hr/>
   <div>
-    <%= f.submit 'Cadatrar', :class => 'btn btn-inverse btn-large' %>
+    <%= f.submit 'Salvar', :class => 'btn btn-inverse btn-large' %>
     <%= link_to 'Voltar', moteis_path, :class => 'btn btn-inverse btn-large' %>
   </div>
 <% end %>
