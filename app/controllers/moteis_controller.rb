@@ -13,7 +13,7 @@ class MoteisController < ApplicationController
 
     respond_to do |format|
       format.xml { render :xml => @moteis, :only => [:nome, :cep, :endereco,
-          :endnumero, :telefone1, :cidade, :uf] }
+          :endnumero, :bairro, :telefone1, :cidade, :uf, :latitude, :longitude] }
     end
   end
 

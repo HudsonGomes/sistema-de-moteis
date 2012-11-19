@@ -4,6 +4,7 @@ class Motel < ActiveRecord::Base
 
   validates :nome, :presence => { :message => 'O nome deve ser preenchido' }
   validates :endereco, :presence => { :message => 'O endereco deve ser preenchido' }
+  validates :bairro, :presence => { :message => 'O bairro deve ser preenchido' }
   validates :latitude, :presence => { :message => 'A latitude deve ser preenchida' }
   validates :latitude, :numericality => { :message => 'A latitude deve conter somente numeros' }
   validates :longitude, :presence => { :message => 'A longitude deve ser preenchida' }
