@@ -27,4 +27,8 @@ class Motel < ActiveRecord::Base
     where('ativo = 0')
   }
 
+  scope :por_cidade, lambda { |cidade|
+    where('cidade = (?)', cidade)
+  }
+
 end

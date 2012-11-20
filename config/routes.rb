@@ -9,14 +9,12 @@ SistemaDeMoteis::Application.routes.draw do
 
 
   match 'pagina_login' => 'application#pagina_login'
-  match 'listagem_moteis' => 'moteis#listagem_xml'
   match 'ativar/:id' => 'moteis#ativar', :as => 'ativar'
   match 'desativar/:id' => 'moteis#desativar', :as => 'desativar'
   match 'alterar_senha' => 'administradores#alterar_senha'
 
-  namespace :sugestao do
-    match 'criar_sugestao' => 'sugestoes#criar_sugestao'
-  end
+  match 'ws/listagem_moteis' => 'ws/moteis#listagem_moteis'
+  match 'ws/criar_sugestao' => 'ws/moteis#criar_sugestao'
 
   resources :sugestoes, :only => :index
   resources :moteis

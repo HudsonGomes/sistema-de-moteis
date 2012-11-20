@@ -1,19 +1,9 @@
 class MoteisController < ApplicationController
-  skip_before_filter :logado?, :only => :listagem_xml
 
   def index
     @moteis_ativos = Motel.ativos
 
     @moteis_inativos = Motel.inativos
-  end
-
-  def listagem_xml
-    @moteis = Motel.ativos
-
-    respond_to do |format|
-      format.xml { render :xml => @moteis, :only => [:nome, :cep, :endereco,
-          :endnumero, :bairro, :telefone1, :cidade, :uf, :latitude, :longitude] }
-    end
   end
 
   def show
@@ -32,7 +22,7 @@ class MoteisController < ApplicationController
 
   def create
     @motel = Motel.new(params[:motel])
-    @motel.ativo = Motel::Ativo
+    @motel.ativo = Motel::ATIVO
 
     respond_to do |format|
       if @motel.save
