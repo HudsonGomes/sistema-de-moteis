@@ -14,6 +14,10 @@ SistemaDeMoteis::Application.routes.draw do
   match 'desativar/:id' => 'moteis#desativar', :as => 'desativar'
   match 'alterar_senha' => 'administradores#alterar_senha'
 
+  namespace :sugestao do
+    match 'criar_sugestao' => 'sugestoes#criar_sugestao'
+  end
+
   resources :sugestoes, :only => :index
   resources :moteis
   resources :suites

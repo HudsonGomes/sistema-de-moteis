@@ -4,11 +4,11 @@ class SugestoesController < ApplicationController
     @sugestoes = Sugestao.all
   end
 
-  def create
+  def criar_sugestao
     @sugestao = Sugestao.new(params[:sugestao])
 
     if @sugestao.save
-      redirect_to @sugestao, :notice => 'Sugestao foi salva com sucesso'
+      redirect_to sugestoes_path, :notice => 'Sugestao foi salva com sucesso'
     else
       render :action => "index", :error => 'Sugestao nao foi salva com sucesso'
     end
