@@ -1,0 +1,24 @@
+<h2>Sugestões</h2>
+<hr/>
+<div class="well">
+  <% if @sugestoes.empty? %>
+  <h4>Não há sugestões</h4>
+  <% else %>
+  <table class="table table-condensed table-bordered table-striped">
+    <thead>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Sugestão</th>
+    </thead>
+    <tbody>
+      <% @sugestoes.each do |sugestao|  %>
+      <tr>
+        <td><%= sugestao.nome %></td>
+        <td><%= sugestao.email %></td>
+        <td><%= sugestao.mensagem %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% end %>
+</div>

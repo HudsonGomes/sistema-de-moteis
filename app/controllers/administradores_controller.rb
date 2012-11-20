@@ -8,7 +8,7 @@ class AdministradoresController < ApplicationController
     @administrador = Administrador.find(params[:id])
 
     if @administrador.update_attributes(params[:administrador])
-      flash[:notice] = 'Senha foi atualizada com sucesso.'
+      flash[:notice] = 'Atualizado com sucesso.'
       redirect_to moteis_path
     else
       flash[:error] = 'Ocorreu um erro'

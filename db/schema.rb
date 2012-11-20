@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121118023929) do
+ActiveRecord::Schema.define(:version => 20121120143308) do
 
   create_table "administradores", :force => true do |t|
     t.string   "nome",       :null => false
@@ -25,21 +25,33 @@ ActiveRecord::Schema.define(:version => 20121118023929) do
   end
 
   create_table "moteis", :force => true do |t|
-    t.string   "nome",           :limit => 100, :null => false
-    t.string   "endereco",       :limit => 100, :null => false
-    t.string   "endnumero",      :limit => 6
-    t.string   "endcomplemento", :limit => 100
-    t.string   "cidade",         :limit => 100, :null => false
-    t.string   "uf",                            :null => false
-    t.string   "telefone1",      :limit => 20
-    t.string   "telefone2",      :limit => 20
-    t.float    "latitude",                      :null => false
-    t.float    "longitude",                     :null => false
+    t.string   "nome",              :limit => 100, :null => false
+    t.string   "endereco",          :limit => 100, :null => false
+    t.string   "endnumero",         :limit => 6
+    t.string   "endcomplemento",    :limit => 100
+    t.string   "cidade",            :limit => 100, :null => false
+    t.string   "uf",                               :null => false
+    t.string   "telefone1",         :limit => 20
+    t.string   "telefone2",         :limit => 20
+    t.float    "latitude",                         :null => false
+    t.float    "longitude",                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "ativo"
     t.string   "cep"
     t.string   "bairro"
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
+  end
+
+  create_table "sugestoes", :force => true do |t|
+    t.string   "nome",       :null => false
+    t.string   "email",      :null => false
+    t.text     "mensagem",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "suites", :force => true do |t|

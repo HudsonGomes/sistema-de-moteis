@@ -19,6 +19,7 @@ group :assets do
   gem 'therubyracer'
   gem 'execjs'
   gem 'uglifier', '>= 1.0.3'
+  gem 'best_in_place', :git => 'https://github.com/bernat/best_in_place'
 end
 
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -26,6 +27,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails', '2.0.6'
 gem 'jquery-datatables-rails'
+gem "paperclip", "~> 3.0"
 
 group :development, :test do
   gem 'rspec'

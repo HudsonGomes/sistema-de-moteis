@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/bernat/best_in_place
+  revision: a3b00ff86ad7944043fadbb4bab532c2bf746aae
+  specs:
+    best_in_place (2.0.1)
+      jquery-rails
+      rails (~> 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -45,6 +53,7 @@ GEM
       xpath (~> 1.0.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
+    cocaine (0.4.2)
     coderay (1.0.8)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -109,6 +118,12 @@ GEM
     multi_json (1.2.0)
     mysql2 (0.3.11)
     nokogiri (1.5.5)
+    paperclip (3.3.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.4.0)
+      mime-types
     pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.10)
@@ -210,6 +225,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bcrypt-ruby
+  best_in_place!
   capybara
   coffee-rails (~> 3.1.1)
   cucumber
@@ -222,6 +238,7 @@ DEPENDENCIES
   jquery-ui-rails
   launchy (= 2.1.0)
   mysql2
+  paperclip (~> 3.0)
   pg
   pry
   rails (= 3.1.8)

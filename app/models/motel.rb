@@ -2,6 +2,8 @@ class Motel < ActiveRecord::Base
 
   has_many :suites
 
+  has_attached_file :foto, :styles => { :medium => "300x300>", :thumb => "50x50>" }
+
   validates :nome, :presence => { :message => 'O nome deve ser preenchido' }
   validates :endereco, :presence => { :message => 'O endereco deve ser preenchido' }
   validates :bairro, :presence => { :message => 'O bairro deve ser preenchido' }
@@ -13,6 +15,9 @@ class Motel < ActiveRecord::Base
   validates :telefone1, :presence => { :message => 'O telefone deve ser preenchido' }
   validates :ativo, :presence => true
   validates :cep, :presence => { :message => 'O cep deve ser preenchido' }
+
+  INATIVO = 0
+  ATIVO = 1
 
   scope :ativos, lambda {
     where('ativo = 1')

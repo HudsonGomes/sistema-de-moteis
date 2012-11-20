@@ -7,5 +7,6 @@
 #   inflect.singular /^(ox)en/i, '\1'
    inflect.irregular 'motel', 'moteis'
    inflect.irregular 'administrador', 'administradores'
+   inflect.irregular 'sugestao', 'sugestoes'
 #   inflect.uncountable %w( fish sheep )
  end
