@@ -9,6 +9,7 @@
     <th>Nome</th>
     <th>Email</th>
     <th>Sugestão</th>
+    <th>Ação</th>
     </thead>
     <tbody>
       <% @sugestoes.each do |sugestao|  %>
@@ -16,6 +17,7 @@
         <td><%= sugestao.nome %></td>
         <td><%= sugestao.email %></td>
         <td><%= sugestao.mensagem %></td>
+        <td><%= link_to "Excluir", {:action => :destroy, :id => sugestao.id}, :method => :delete, :confirm => 'Tem certeza que deseja excluir?'  %></td>
       </tr>
       <% end %>
     </tbody>

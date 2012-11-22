@@ -16,7 +16,7 @@ SistemaDeMoteis::Application.routes.draw do
   match 'ws/listagem_moteis' => 'ws/moteis#listagem_moteis'
   match 'ws/criar_sugestao' => 'ws/moteis#criar_sugestao'
 
-  resources :sugestoes, :only => :index
+  resources :sugestoes
   resources :moteis
   resources :suites
   resources :administradores, :only => :update

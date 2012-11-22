@@ -4,13 +4,10 @@ class SugestoesController < ApplicationController
     @sugestoes = Sugestao.all
   end
 
+  def destroy
+    @sugestao = Sugestao.find(params[:id])
+    @sugestao.destroy
 
-   def destroy
-    @suite = Suite.find(params[:id])
-    @suite.destroy
-
-    respond_to do |format|
-      format.html { redirect_to suites_url }
-    end
+    redirect_to sugestoes_path
   end
 end
