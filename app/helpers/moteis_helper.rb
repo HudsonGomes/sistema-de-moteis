@@ -16,4 +16,8 @@ module MoteisHelper
       "Inativo"
     end
   end
+
+  def formata_telefone(ddd, telefone)
+    "(#{ddd}) #{telefone}"
+  end
 end

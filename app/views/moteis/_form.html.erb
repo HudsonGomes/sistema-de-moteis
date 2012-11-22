@@ -20,11 +20,19 @@
   </div>
   <div class="row">
     <div class="span12">
-      <div class="span2">
+      <div class="span1">
+        <%= f.label :ddd1, 'DDD:' %>
+        <%= f.text_field :ddd1, :class => 'span1', :style => 'border: 1px solid' %>
+      </div>
+      <div class="span3">
         <%= f.label :telefone1, 'Telefone 1:' %>
         <%= f.text_field :telefone1, :class => 'span2', :style => 'border: 1px solid' %>
       </div>
-      <div class="span2">
+      <div class="span1">
+        <%= f.label :ddd2, 'DDD:' %>
+        <%= f.text_field :ddd2, :class => 'span1', :style => 'border: 1px solid' %>
+      </div>
+      <div class="span3">
         <%= f.label :telefone2, 'Telefone 2:' %>
         <%= f.text_field :telefone2, :class => 'span2', :style => 'border: 1px solid' %>
       </div>

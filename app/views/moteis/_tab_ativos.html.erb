@@ -14,7 +14,7 @@
     <% @moteis_ativos.each do |motel| %>
       <tr>
         <td><%= link_to motel.nome, motel_path(motel) %></td>
-        <td><%= motel.telefone1%></td>
+        <td><%= formata_telefone(motel.ddd1, motel.telefone1)%></td>
         <td><%= motel.bairro %></td>
         <td><%= motel.cidade %></td>
         <td><%= motel.uf %></td>

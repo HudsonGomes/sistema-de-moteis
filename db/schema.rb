@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121120143308) do
+ActiveRecord::Schema.define(:version => 20121121012029) do
 
   create_table "administradores", :force => true do |t|
     t.string   "nome",       :null => false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20121120143308) do
     t.string   "foto_content_type"
     t.integer  "foto_file_size"
     t.datetime "foto_updated_at"
+    t.string   "ddd1"
+    t.string   "ddd2"
   end
 
   create_table "sugestoes", :force => true do |t|

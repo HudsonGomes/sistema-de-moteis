@@ -13,6 +13,8 @@ class Motel < ActiveRecord::Base
   validates :longitude, :numericality => { :message => 'A longitude deve conter somente numeros' }
   validates :telefone1, :numericality => { :message => 'O telefone deve conter somente numeros' }
   validates :telefone1, :presence => { :message => 'O telefone deve ser preenchido' }
+  validates :ddd1, :presence => { :message => 'O DDD deve ser preenchido' }
+  validates :ddd1, :numericality => { :message => 'O DDD deve conter somente numeros' }
   validates :ativo, :presence => true
   validates :cep, :presence => { :message => 'O cep deve ser preenchido' }
 

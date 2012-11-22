@@ -18,8 +18,11 @@ class Ws::MoteisController < ApplicationController
 
   def criar_sugestao
     respond_to do |format|
-      if params[:sugestao]
-        @sugestao = Sugestao.new(params[:sugestao])
+      if params[:nome] && params[:email] && params[:mensagem]
+
+        hash_params = {:sugestao => {:nome => params[:nome], :email => params[:email], :mensagem => params[:mensagem]}}
+
+        @sugestao = Sugestao.new(hash_params[:sugestao])
 
         if @sugestao.save
           format.xml { render :xml => {:message => "Sugestao enviada" }.to_xml(:skip_types => true, :root => :sugestao)}
