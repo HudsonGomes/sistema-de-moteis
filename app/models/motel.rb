@@ -33,4 +33,9 @@ class Motel < ActiveRecord::Base
     where('cidade = (?)', cidade)
   }
 
+  scope :mais_proximos, lambda{ |lat_mais, lat_menos, long_mais, long_menos|
+    where('latitude < (?) and latitude > (?) and longitude < (?) and longitude > (?)',
+      (lat_mais),(lat_menos), (long_mais), (long_menos))
+  }
+
 end
