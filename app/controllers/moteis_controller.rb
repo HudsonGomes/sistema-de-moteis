@@ -10,8 +10,6 @@ class MoteisController < ApplicationController
     @motel = Motel.find(params[:id])
 
     @suites = Suite.find_all_by_motel_id(params[:id])
-
-    @json = @motel.to_gmaps4rails
   end
 
   def new

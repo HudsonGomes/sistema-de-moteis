@@ -21,7 +21,7 @@ class Motel < ActiveRecord::Base
   INATIVO = 0
   ATIVO = 1
 
-  acts_as_gmappable 
+#  acts_as_gmappable
 
   scope :ativos, lambda {
     where('ativo = 1')
@@ -41,8 +41,8 @@ class Motel < ActiveRecord::Base
             SIN( RADIANS( ? ) ) ) * 6380 < 5', latitude, longitude, latitude)
   }
 
-  def gmaps4rails_address
-    "#{self.latitude}, #{self.longitude}"
-  end 
+#  def gmaps4rails_address
+#    "#{self.latitude}, #{self.longitude}"
+#  end
 
 end
