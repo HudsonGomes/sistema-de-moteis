@@ -28,6 +28,7 @@ gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails', '2.0.6'
 gem 'jquery-datatables-rails'
 gem "paperclip", "~> 3.0"
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'rspec'

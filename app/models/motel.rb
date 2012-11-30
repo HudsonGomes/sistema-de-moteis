@@ -21,6 +21,8 @@ class Motel < ActiveRecord::Base
   INATIVO = 0
   ATIVO = 1
 
+  acts_as_gmappable 
+
   scope :ativos, lambda {
     where('ativo = 1')
   }
@@ -33,9 +35,14 @@ class Motel < ActiveRecord::Base
     where('cidade = (?)', cidade)
   }
 
-  scope :mais_proximos, lambda{ |lat_mais, lat_menos, long_mais, long_menos|
-    where('latitude < (?) and latitude > (?) and longitude < (?) and longitude > (?)',
-      (lat_mais),(lat_menos), (long_mais), (long_menos))
+  scope :mais_proximos, lambda{ |latitude, longitude|
+    where('ACOS( COS( RADIANS( latitude ) ) * COS( RADIANS( ? )) *
+            COS(RADIANS( longitude ) - RADIANS( ? )) + SIN( RADIANS( latitude ) ) *
+            SIN( RADIANS( ? ) ) ) * 6380 < 5', latitude, longitude, latitude)
   }
+
+  def gmaps4rails_address
+    "#{self.latitude}, #{self.longitude}"
+  end 
 
 end

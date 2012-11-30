@@ -6,11 +6,7 @@ class Ws::MoteisController < ApplicationController
     if params[:cidade]
       @moteis = Motel.por_cidade(params[:cidade])
     elsif params[:latitude] && params[:longitude]
-      lat_mais = (params[:latitude].to_f + 0.03)
-      lat_menos = (params[:latitude].to_f - 0.03)
-      long_mais = (params[:longitude].to_f + 0.1)
-      long_menos = (params[:longitude].to_f - 0.1)
-      @moteis = Motel.ativos.mais_proximos(lat_mais, lat_menos, long_mais, long_menos)
+      @moteis = Motel.ativos.mais_proximos(params[:latitude], params[:longitude])
     else
       @moteis = Motel.ativos
     end
