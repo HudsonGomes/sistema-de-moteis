@@ -1,25 +1,28 @@
 <% if @moteis_ativos.empty? %>
   <h4>Não existem motéis ativos cadastrados</h4>
 <% else %>
-  <table id="tabela-ativos" class="table table-striped table-bordered datatable table-condensed">
-    <tr>
-      <th>Nome</th>
-      <th>telefone principal</th>
-      <th>Bairro</th>
-      <th>Cidade</th>
-      <th>UF</th>
-      <th>Status</th>
-    </tr>
-
-    <% @moteis_ativos.each do |motel| %>
+  <table id="tabela-ativos" class="table table-bordered datatable table-condensed">
+    <thead>
       <tr>
-        <td><%= link_to motel.nome, motel_path(motel) %></td>
-        <td><%= formata_telefone(motel.ddd1, motel.telefone1)%></td>
-        <td><%= motel.bairro %></td>
-        <td><%= motel.cidade %></td>
-        <td><%= motel.uf %></td>
-        <td><%= verifica_status(motel) %></td>
+        <th>Nome</th>
+        <th>telefone principal</th>
+        <th>Bairro</th>
+        <th>Cidade</th>
+        <th>UF</th>
+        <th>Status</th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @moteis_ativos.each do |motel| %>
+        <tr>
+          <td><%= link_to motel.nome, motel_path(motel) %></td>
+          <td><%= formata_telefone(motel.ddd1, motel.telefone1)%></td>
+          <td><%= motel.bairro %></td>
+          <td><%= motel.cidade %></td>
+          <td><%= motel.uf %></td>
+          <td><%= verifica_status(motel) %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% end %>

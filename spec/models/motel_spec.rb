@@ -39,6 +39,16 @@ describe Motel do
         @motel_valido.valid?.should be_false
       end
 
+      it "bairro é nil" do
+        @motel_valido.bairro = nil
+        @motel_valido.valid?.should be_false
+      end
+
+      it "cep é nil" do
+        @motel_valido.cep = nil
+        @motel_valido.valid?.should be_false
+      end
+
       it "latitude é nil" do
         @motel_valido.latitude = nil
         @motel_valido.valid?.should be_false
@@ -64,8 +74,18 @@ describe Motel do
         @motel_valido.valid?.should be_false
       end
 
+      it "ddd é nil" do
+        @motel_valido.ddd1 = nil
+        @motel_valido.valid?.should be_false
+      end
+
       it "telefone contiver letras" do
         @motel_valido.telefone1 = 'ba'
+        @motel_valido.valid?.should be_false
+      end
+
+      it "ddd contiver letras" do
+        @motel_valido.ddd1 = 'ba'
         @motel_valido.valid?.should be_false
       end
 

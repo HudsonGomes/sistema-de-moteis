@@ -54,8 +54,8 @@ describe Administrador do
         @administrador_valido.valid?.should be_false
       end
 
-      it "Senha é nil" do
-        @administrador_valido.senha = nil
+      it "Password é nil" do
+        @administrador_valido.password = nil
         @administrador_valido.valid?.should be_false
       end
     end

@@ -13,8 +13,10 @@ SistemaDeMoteis::Application.routes.draw do
   match 'desativar/:id' => 'moteis#desativar', :as => 'desativar'
   match 'alterar_senha' => 'administradores#alterar_senha'
 
-  match 'ws/listagem_moteis' => 'ws/moteis#listagem_moteis'
-  match 'ws/criar_sugestao' => 'ws/moteis#criar_sugestao'
+  ############### WEB SERVICES #################
+
+  get 'ws/listagem_moteis_proximos' => 'ws/ws#listagem_moteis_proximos'
+  post 'ws/criar_sugestao' => 'ws/ws#criar_sugestao'
 
   resources :sugestoes
   resources :moteis
