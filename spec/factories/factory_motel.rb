@@ -8,7 +8,7 @@ FactoryGirl.define do
     cep '120232345'
     cidade 'cidade'
     uf 'uf'
-    ddd1 '21'
+    ddd1 '021'
     telefone1 '12345678'
     telefone2 '87654321'
     latitude '12'

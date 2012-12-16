@@ -93,6 +93,11 @@ describe Motel do
         @motel_valido.ativo = nil
         @motel_valido.valid?.should be_false
       end
+
+      it "ddd com quantidade de caracteres diferente de 3" do
+        @motel_valido.ddd1 = 21
+        @motel_valido.valid?.should be_false
+      end
     end
   end
 
