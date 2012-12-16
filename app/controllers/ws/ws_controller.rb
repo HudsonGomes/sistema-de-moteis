@@ -15,7 +15,7 @@ class Ws::WsController < ApplicationController
 
         if @moteis.any?
           render :xml => @moteis, :only => [:nome, :cep, :endereco,
-            :endnumero, :bairro, :telefone1, :cidade, :uf, :latitude, :longitude]
+            :endnumero, :bairro, :telefone1, :ddd1, :cidade, :uf, :latitude, :longitude]
         else
           render :text => "Nenhum motel encontrado"
         end
