@@ -6,7 +6,6 @@
   <th>Bairro</th>
   <th>Cep</th>
   <th>Telefone Principal</th>
-  <th>Telefone Secundário</th>
   <th>Ações</th>
 </thead>
 <tbody>
@@ -18,8 +17,7 @@
   <td><%= tem_complemento?(@motel) %></td>
   <td><%= @motel.bairro %></td>
   <td><%= @motel.cep %></td>
-  <td><%= @motel.telefone1 %></td>
-  <td><%= @motel.telefone2 %></td>
+  <td><%= formata_telefone(@motel.ddd1, @motel.telefone1) %></td>
   <td>
     <%= link_to 'Editar', edit_motel_path(@motel) %> |
     <% if @motel.ativo == 1 %>
