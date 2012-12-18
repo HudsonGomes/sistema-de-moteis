@@ -22,10 +22,10 @@ module SistemaDeMoteis
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
 
-    config.middleware.use ExceptionNotifier,
-    :email_prefix => "[Automático] ERRO SISTEMA DE MOTÉIS ",
-    :sender_address => %{"Error Notifier" hudson.sgomes@gmail.com},
-    :exception_recipients => %w{hudson.sgomes@gmail.com marcogbarcellos@gmail.com}
+#    config.middleware.use ExceptionNotifier,
+#    :email_prefix => "[Automático] ERRO SISTEMA DE MOTÉIS ",
+#    :sender_address => %{"Error Notifier" hudson.sgomes@gmail.com},
+#    :exception_recipients => %w{hudson.sgomes@gmail.com marcogbarcellos@gmail.com}
 
 
     # Activate observers that should always be running.
