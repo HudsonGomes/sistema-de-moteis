@@ -52,7 +52,7 @@ class Motel < ActiveRecord::Base
   def menor_preco
     if self.suites.any?
       suites = self.suites
-      suites.sort! { |obj| obj.valor}
+      suites.sort! { |a, b|  a.valor <=> b.valor }
       suites.first.valor.to_s.gsub('.',',')
     else
        " - "
