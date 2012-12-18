@@ -1,6 +1,5 @@
 <table class="table-bordered table">
   <thead>
-  <th>Foto</th>
   <th>Endereço</th>
   <th>Número</th>
   <th>Complemento</th>
@@ -14,7 +13,6 @@
 
 </tbody>
 <tr>
-  <td><%= image_tag @motel.foto.url(:thumb) %></td>
   <td><%= @motel.endereco %></td>
   <td><%= @motel.endnumero %></td>
   <td><%= tem_complemento?(@motel) %></td>

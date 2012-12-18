@@ -26,7 +26,6 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails', '2.0.6'
 gem 'jquery-datatables-rails', :github => 'rweng/jquery-datatables-rails'
-gem "paperclip", "~> 3.0"
 
 group :development, :test do
   gem 'rspec'

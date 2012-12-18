@@ -3,7 +3,6 @@ class Motel < ActiveRecord::Base
   has_many :suites
 
   attr_accessor :menor_valor
-  has_attached_file :foto, :styles => { :medium => "300x300>", :thumb => "50x50>" }
 
   validates :nome, :presence => { :message => 'O nome deve ser preenchido' }
   validates :endereco, :presence => { :message => 'O endereco deve ser preenchido' }
