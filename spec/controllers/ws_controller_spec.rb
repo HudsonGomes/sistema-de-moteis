@@ -28,7 +28,7 @@ describe Ws::WsController do
       response.code.should be_eql("400")
     end
 
-    it "Deve retornar erro '200 OK' caso não sejam passados parâmetros corretos" do
+    it "Deve retornar '200 OK' caso sejam passados parâmetros corretos" do
       get 'listagem_moteis_proximos', :key => '4g25lhio3b6j3v5615125oinlk', :latitude => 23, :longitude => 40
 
       response.code.should be_eql("200")
@@ -40,6 +40,32 @@ describe Ws::WsController do
       post 'criar_sugestao'
 
       response.code.should be_eql("400")
+    end
+  end
+
+  context "GET listagem_moteis_regiao" do
+    it "Deve retornar 'Unathorized' caso não seja passada a key correta" do
+      get 'listagem_moteis_regiao', :key => '3u9fu48uf'
+
+      response.code.should be_eql("401")
+    end
+
+    it "Deve retornar '400 Bad Request' caso não seja passada a key" do
+      get 'listagem_moteis_regiao'
+
+      response.code.should be_eql("400")
+    end
+
+    it "Deve retornar erro '400 Bad Request' caso não seja passada nenhuma região" do
+      get 'listagem_moteis_regiao', :key => '4736473gio321sgdo015136tnsg'
+
+      response.code.should be_eql("400")
+    end
+
+    it "Deve retornar '200 ok' caso sejam passados parâmetros corretos" do
+      get 'listagem_moteis_regiao', :key => '4736473gio321sgdo015136tnsg', :regiao => 'zona sul'
+
+      response.code.should be_eql("200")
     end
   end
 

@@ -12,16 +12,21 @@ SistemaDeMoteis::Application.routes.draw do
   match 'ativar/:id' => 'moteis#ativar', :as => 'ativar'
   match 'desativar/:id' => 'moteis#desativar', :as => 'desativar'
   match 'alterar_senha' => 'administradores#alterar_senha'
+  post 'cadastrar_suite' => 'suites#cadastrar_suite'
 
-  ############### WEB SERVICES #################
-
-  get 'ws/listagem_moteis_proximos' => 'ws/ws#listagem_moteis_proximos'
-  post 'ws/criar_sugestao' => 'ws/ws#criar_sugestao'
 
   resources :sugestoes
   resources :moteis
   resources :suites
   resources :administradores, :only => :update
+  
+  ############### WEB SERVICES #################
+  namespace :ws do
+    get 'listagem_moteis_proximos' => 'ws#listagem_moteis_proximos'
+    post 'criar_sugestao' => 'ws#criar_sugestao'
+    get 'listagem_moteis_regiao' => 'ws#listagem_moteis_regiao'
+    get 'listagem_moteis' => 'ws#listagem_moteis'
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

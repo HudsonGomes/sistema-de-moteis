@@ -2,6 +2,7 @@ class Motel < ActiveRecord::Base
 
   has_many :suites
 
+  attr_accessor :menor_valor
   has_attached_file :foto, :styles => { :medium => "300x300>", :thumb => "50x50>" }
 
   validates :nome, :presence => { :message => 'O nome deve ser preenchido' }
@@ -22,7 +23,7 @@ class Motel < ActiveRecord::Base
   INATIVO = 0
   ATIVO = 1
 
-#  acts_as_gmappable
+  #  acts_as_gmappable
 
   scope :ativos, lambda {
     where('ativo = 1')
@@ -42,8 +43,36 @@ class Motel < ActiveRecord::Base
             SIN( RADIANS( ? ) ) ) * 6380 < 5', latitude, longitude, latitude)
   }
 
-#  def gmaps4rails_address
-#    "#{self.latitude}, #{self.longitude}"
-#  end
+  scope :por_regiao, lambda { |regiao|
+    where('regiao = (?)', regiao)
+  }
+  #  def gmaps4rails_address
+  #    "#{self.latitude}, #{self.longitude}"
+  #  end
+
+  def menor_preco
+    if self.suites.any?
+      suites = self.suites
+      binding.pry
+      suites.sort! { |obj| obj.valor}
+      suites.first.valor
+    else
+       " - "
+    end
+  end
+
+  def self.dados_xml(motel)
+    dados = []
+
+    motel.each do |mt|
+      mt.menor_valor = mt.menor_preco
+      dados << {:nome => mt.nome, :cep => mt.cep, :endereco => mt.endereco,
+        :endnumero => mt.endnumero, :bairro => mt.bairro, :telefone1 => mt.telefone1,
+        :ddd1 => mt.ddd1, :cidade => mt.cidade, :uf => mt.uf, :latitude => mt.latitude,
+        :longitude => mt.longitude, :menor_valor => mt.menor_valor}
+    end
+
+    dados
+  end
 
 end

@@ -60,4 +60,5 @@ class MoteisController < ApplicationController
 
     redirect_to moteis_url
   end
+  
 end

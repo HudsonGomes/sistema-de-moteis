@@ -1,0 +1,21 @@
+<%= form_tag cadastrar_suite_path do %>
+  <div class="row">
+    <div class="span12">
+      <div class="span3">
+        <%= label_tag 'Nome:' %>
+        <%= text_field_tag 'nome' %>
+        <%= label_tag 'Valor:' %>
+        <%= text_field_tag 'valor' %>
+      </div>
+      <div class="span6">
+        <%= label_tag 'Descrição:' %>
+        <%= text_area_tag 'descricao', nil, :rows => 4, :cols => 30 %>
+      </div>
+      <br/>
+      <div class="span3">
+        <%= hidden_field_tag 'idmotel', @motel.id %>
+        <%= submit_tag 'Cadastrar', :class => 'btn btn-inverse' %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -14,8 +14,8 @@ class Ws::WsController < ApplicationController
         @moteis = Motel.ativos.mais_proximos(latitude, longitude)
 
         if @moteis.any?
-          render :xml => @moteis, :only => [:nome, :cep, :endereco,
-            :endnumero, :bairro, :telefone1, :ddd1, :cidade, :uf, :latitude, :longitude]
+          dados = Motel.dados_xml(@moteis)
+          render :xml => dados, :root => 'moteis'
         else
           render :text => "Nenhum motel encontrado"
         end
@@ -26,6 +26,41 @@ class Ws::WsController < ApplicationController
       render :nothing => true, :status => 400
     end
 
+  end
+
+  #  def listagem_moteis
+  #    @moteis = Motel.ativos
+  #
+  #    if @moteis
+  #      dados = Motel.dados_xml(@moteis)
+  #      render :xml => dados, :root => 'moteis'
+  #    else
+  #      render :text => "Nenhum motel encontrado"
+  #    end
+  #  end
+
+  def listagem_moteis_regiao
+    
+    key = "4736473gio321sgdo015136tnsg"
+    begin
+      if params.fetch(:key) == key
+
+        regiao = params.fetch(:regiao)
+
+        @moteis = Motel.ativos.por_regiao(regiao)
+
+        if @moteis.any?
+          dados = Motel.dados_xml(@moteis)
+          render :xml => dados, :root => 'moteis'
+        else
+          render :text => "Nenhum motel encontrado"
+        end
+      else
+        render :nothing => true, :status => :unauthorized
+      end
+    rescue IndexError
+      render :nothing => true, :status => 400
+    end
   end
 
   def criar_sugestao

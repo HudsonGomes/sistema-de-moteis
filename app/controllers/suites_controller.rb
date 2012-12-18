@@ -4,24 +4,22 @@ class SuitesController < ApplicationController
     @suite = Suite.find(params[:id])
   end
   
-  def new
-    @suite = Suite.new
+  def cadastrar_suite
+    attributes = {:nome => params[:nome], :valor => params[:valor],
+      :descricao => params[:descricao], :motel_id => params[:idmotel]}
+    
+    @suite = Suite.new attributes
+
+    if @suite.save
+      flash[:notice] = 'Suite foi salva com sucesso'
+      redirect_to motel_path(@suite.motel_id)
+    else
+      flash[:error] = 'Um erro ocorreu'
+    end
   end
 
   def edit
     @suite = Suite.find(params[:id])
-  end
-
-  def create
-    @suite = Suite.new(params[:suite])
-
-    respond_to do |format|
-      if @suite.save
-        format.html { redirect_to @suite, :notice => 'Suite foi salva com sucesso' }
-      else
-        format.html { render :action => "new" }
-      end
-    end
   end
 
   def update
