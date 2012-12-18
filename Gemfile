@@ -26,6 +26,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails', '2.0.6'
 gem 'jquery-datatables-rails', :github => 'rweng/jquery-datatables-rails'
+gem 'exception_notification', '2.5.2'
 
 group :development, :test do
   gem 'rspec'
