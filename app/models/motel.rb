@@ -18,6 +18,7 @@ class Motel < ActiveRecord::Base
   validates :ddd1, :numericality => { :message => 'O DDD deve conter somente numeros' }
   validates :ativo, :presence => true
   validates :cep, :presence => { :message => 'O cep deve ser preenchido' }
+  validates :regiao, :presence => { :message => 'A regiao deve ser preenchida' }
 
   INATIVO = 0
   ATIVO = 1

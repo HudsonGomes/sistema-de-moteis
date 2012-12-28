@@ -50,6 +50,10 @@
         <%= f.text_field :cep, :class => 'span2', :style => 'border: 1px solid' %>
       </div>
       <div class="span2">
+	<%= f.label :regiao, 'Região:' %>
+	<%= f.select :regiao, Localizacao::REGIOES,{}, :include => :blank ,:class => 'span2', :style => 'border: 1px solid;' %>
+      </div>
+      <div class="span2">
         <%= f.label :cidade, 'Cidade:' %>
         <%= f.select :cidade, ['Rio de Janeiro', 'Niterói'], {}, :class => 'span2', :style => 'border: 1px solid' %>
       </div>

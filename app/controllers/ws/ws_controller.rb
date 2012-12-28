@@ -28,25 +28,13 @@ class Ws::WsController < ApplicationController
 
   end
 
-  #  def listagem_moteis
-  #    @moteis = Motel.ativos
-  #
-  #    if @moteis
-  #      dados = Motel.dados_xml(@moteis)
-  #      render :xml => dados, :root => 'moteis'
-  #    else
-  #      render :text => "Nenhum motel encontrado"
-  #    end
-  #  end
-
   def listagem_moteis_regiao
     
     key = "4736473gio321sgdo015136tnsg"
     begin
       if params.fetch(:key) == key
 
-        regiao = params.fetch(:regiao)
-
+        regiao = Localizacao.identifica_localizacao(params.fetch(:regiao))
         @moteis = Motel.ativos.por_regiao(regiao)
 
         if @moteis.any?
